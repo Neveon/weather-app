@@ -6,14 +6,181 @@ body {
   font-family: "Open Sans", serif;
 }
 
+/* Loading screen anim from https://codepen.io/tholman/pen/yenku */
+.preloader {
+	position: absolute;
+	margin-left: -55px;
+	margin-top: -100px;
+	height: 110px;
+	width: 110px;
+	left: 50%;
+	top: 50%;
+}
+
+svg {
+  width: 110px;
+  height: 110px;
+}
+
+path {
+  stroke: #9ea1a4;
+  stroke-width: 0.25;
+  fill: #241E20;
+}
+
+#cloud {
+  position: relative;
+  z-index: 2;
+}
+
+#cloud path {
+  fill: #efefef;
+}
+
+#sun {
+  margin-left: -10px;
+  margin-top: 6px;
+  opacity: 0;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 45px;
+  top: 15px;
+  z-index: 1;
+  
+  animation-name: rotate;
+  animation-duration: 16000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#sun path {
+  stroke-width: 0.18;
+  fill: #9ea1a4;
+}
+
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Rain */
+.rain {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin-top: -32px;
+  margin-left: 19px;
+}
+
+.drop {
+  opacity: 1;
+  background: #9ea1a4;
+  display: block;
+  float: left;
+  width: 3px;
+  height: 10px;
+  margin-left: 4px;
+  border-radius: 0px 0px 6px 6px;
+  
+  animation-name: drop;
+  animation-duration: 350ms;
+  animation-iteration-count: infinite;
+}
+
+.drop:nth-child(1) {
+  animation-delay: -130ms;
+}
+
+.drop:nth-child(2) {
+  animation-delay: -240ms;
+}
+
+.drop:nth-child(3) {
+  animation-delay: -390ms;
+}
+
+.drop:nth-child(4) {
+  animation-delay: -525ms;
+}
+
+.drop:nth-child(5) {
+  animation-delay: -640ms;
+}
+
+.drop:nth-child(6) {
+  animation-delay: -790ms;
+}
+
+.drop:nth-child(7) {
+  animation-delay: -900ms;
+}
+
+.drop:nth-child(8) {
+  animation-delay: -1050ms;
+}
+
+.drop:nth-child(9) {
+  animation-delay: -1130ms;
+}
+
+.drop:nth-child(10) {
+  animation-delay: -1300ms;
+}
+
+
+@keyframes drop {
+  50% {
+    height: 45px;
+    opacity: 0;
+  }
+
+  51% {
+    opacity: 0;
+  }
+
+  100% {
+    height: 1px;
+    opacity: 0;
+  }
+}
+/* Loading screen only appears for 5s */
+@keyframes load {
+  0%{opacity:1;}
+  66%{opacity:1;}
+  100%{opacity:0;}
+}
+
+#load {
+  animation-name: load;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
 /* Mobile */
 @media only screen and (min-width: 320px) {
+  @keyframes colorin {
+    0%{opacity:0;}
+    100%{opacity:1;}
+  }
+
   .wrapper {
+    opacity:0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    animation-name: colorin;
+    animation-duration: 1s;
+    animation-delay:5s;
+    animation-fill-mode: forwards;
   }
 
   .main {
@@ -138,22 +305,45 @@ body {
   
 }
 
+/* Tablet and up */
 @media only screen and (min-width: 768px) {
-  
+  /* opacity from 100% to none for background */
+  @keyframes colorin {
+    0%{opacity:0;}
+    100%{opacity:1;}
+  }
   .wrapper {
+    opacity:0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation-name: colorin;
+    animation-duration: 1s;
+    animation-delay:5s;
+    animation-fill-mode: forwards;
   }
-  
+  /* Slide down for main content of page */
+  @keyframes slidedown {
+    0%{transform:translateY(-1000px);}
+    100%{transform:translateY(0px);}
+  }
   .main {
+    /* main content is out of view*/
+    transform:translateY(-1000px);
+    -webkit-transform: translateY(-1000px);
     height: 90vh;
     background: #fff;
     box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
     width: auto;
     margin: 0 auto;
+    animation-name: slidedown;
+    animation-delay: 5s;
+    animation-duration: 3s;
+    transition-timing-function: ease-out;
+    /* main content stays in page after animation - animation-fill-mode */
+    animation-fill-mode: forwards;
   }
   
   .title-container {
@@ -273,21 +463,47 @@ body {
 }
 /* 4k */
 @media only screen and (min-width: 2560px) {
-  
+
+  /* opacity from 100% to none for background */
+  @keyframes colorin {
+    0%{opacity:0;}
+    100%{opacity:1;}
+  }
+
   .wrapper {
+    opacity:0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    animation-name: colorin;
+    animation-duration: 1s;
+    animation-delay:5s;
+    animation-fill-mode: forwards;
   }
   
+  /* Slide down for main content of page */
+  @keyframes slidedown {
+    0%{transform:translateY(-1000px);}
+    100%{transform:translateY(0px);}
+  }
+
   .main {
+    /* main content is out of view*/
+    transform:translateY(-1000px);
+    -webkit-transform: translateY(-1000px);
     height: 90vh;
     background: #fff;
     box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
     width: auto;
     margin: 0 auto;
+    animation-name: slidedown;
+    animation-delay: 5s;
+    animation-duration: 3s;
+    transition-timing-function: ease-out;
+    /* main content stays in page after animation - animation-fill-mode */
+    animation-fill-mode: forwards;
   }
   
   .title-container {
