@@ -29,12 +29,12 @@ const WeatherState = props => {
   const getWeather = async (city, country) => {
     // When making the call use await, fetch( {URL GOES HERE} )
     const api_call = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${weatherAppId}&units=imperial`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${weatherAppId}&units=imperial`
     );
 
     const data = await api_call.json(); //JSON - readable format
 
-    data.cod && data.cod !== '404' // If there is no 404 error (no data found)
+    (await data.cod) && (await data.cod) !== '404' // If there is no 404 error (no data found)
       ? // Dispatch data, Reducer responsible of putting it in the state and
         // sending it down to any components
         dispatch({
@@ -51,11 +51,11 @@ const WeatherState = props => {
       : dispatch({
           type: GET_WEATHER,
           payload: {
-            temperature: undefined,
-            city: undefined,
-            country: undefined,
-            humidity: undefined,
-            description: undefined,
+            temperature: null,
+            city: null,
+            country: null,
+            humidity: null,
+            description: null,
             error: data.message
           }
         });
