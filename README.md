@@ -1,10 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather-App
+Type in the City and Country to receive the weather!
 
-## Available Scripts
+## API
+[You must have an API Key from openweathermap before getting started](https://openweathermap.org/appid#get)
 
-In the project directory, you can run:
+* Create a <code>.env.local</code> file in the root and in the file write type <code>REACT_APP_API_KEY='YOUR_UNIQUE_API_KEY_HERE'</code>
+* Save and run <code>npm start</code>
 
-### `npm start`
-
-Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
