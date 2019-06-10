@@ -24,13 +24,18 @@ const Weather = props => (
         Humidity: <span className='weather__value'>{props.humidity}</span>
       </p>
     )}
-    {props.description && (
+    {props.description ? (
       <p className='weather__key'>
         Description: <span className='weather__value'>{props.description}</span>
       </p>
+    ) : (
+      <Loading />
     )}
-    {props.error && <p className='weather__error'>{props.error}</p>}
-    <Loading />
+    {props.error ? (
+      <p className='weather__error'>{props.error}</p>
+    ) : (
+      <Loading />
+    )}
   </div>
 );
 export default Weather;

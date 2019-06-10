@@ -21,11 +21,10 @@ class App extends React.Component {
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
 
-    console.log(process.env.API_KEY);
     // When making the call use await, fetch( {URL GOES HERE} )
     const api_call = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${
-        process.env.API_KEY
+        process.env.REACT_APP_API_KEY
       }&units=imperial`
     );
     //JSON - readable format
