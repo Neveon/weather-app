@@ -169,7 +169,6 @@ path {
     align-items: flex-end;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
 
@@ -314,7 +313,6 @@ path {
     align-items: center;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
   /* Slide down for main content of page */
@@ -336,7 +334,6 @@ path {
     width: auto;
     margin: 0 auto;
     animation-name: slidedown;
-    animation-delay: 5s;
     animation-duration: 3s;
     transition-timing-function: ease-out;
     /* main content stays in page after animation - animation-fill-mode */
@@ -480,7 +477,6 @@ path {
     align-items: center;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
 
@@ -504,7 +500,6 @@ path {
     width: auto;
     margin: 0 auto;
     animation-name: slidedown;
-    animation-delay: 5s;
     animation-duration: 3s;
     transition-timing-function: ease-out;
     /* main content stays in page after animation - animation-fill-mode */

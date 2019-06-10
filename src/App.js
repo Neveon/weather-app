@@ -2,7 +2,6 @@ import React from 'react';
 import Titles from './components/Titles';
 import Form from './components/Form';
 import Weather from './components/Weather';
-import Loading from './components/Loading';
 
 class App extends React.Component {
   // React 16 state
@@ -21,6 +20,8 @@ class App extends React.Component {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
+
+    console.log(process.env.API_KEY);
     // When making the call use await, fetch( {URL GOES HERE} )
     const api_call = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${
