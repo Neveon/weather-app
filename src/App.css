@@ -3,18 +3,18 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
 body {
-  font-family: "Open Sans", serif;
+  font-family: 'Open Sans', serif;
 }
 
 /* Loading screen anim from https://codepen.io/tholman/pen/yenku */
 .preloader {
-	position: absolute;
-	margin-left: -55px;
-	margin-top: -100px;
-	height: 110px;
-	width: 110px;
-	left: 50%;
-	top: 50%;
+  position: absolute;
+  margin-left: -55px;
+  margin-top: -100px;
+  height: 110px;
+  width: 110px;
+  left: 50%;
+  top: 50%;
 }
 
 svg {
@@ -25,7 +25,7 @@ svg {
 path {
   stroke: #9ea1a4;
   stroke-width: 0.25;
-  fill: #241E20;
+  fill: #241e20;
 }
 
 #cloud {
@@ -47,7 +47,7 @@ path {
   left: 45px;
   top: 15px;
   z-index: 1;
-  
+
   animation-name: rotate;
   animation-duration: 16000ms;
   animation-iteration-count: infinite;
@@ -58,7 +58,6 @@ path {
   stroke-width: 0.18;
   fill: #9ea1a4;
 }
-
 
 @keyframes rotate {
   0% {
@@ -88,7 +87,7 @@ path {
   height: 10px;
   margin-left: 4px;
   border-radius: 0px 0px 6px 6px;
-  
+
   animation-name: drop;
   animation-duration: 350ms;
   animation-iteration-count: infinite;
@@ -134,7 +133,6 @@ path {
   animation-delay: -1300ms;
 }
 
-
 @keyframes drop {
   50% {
     height: 45px;
@@ -152,9 +150,15 @@ path {
 }
 /* Loading screen only appears for 5s */
 @keyframes load {
-  0%{opacity:1;}
-  66%{opacity:1;}
-  100%{opacity:0;}
+  0% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #load {
@@ -166,12 +170,16 @@ path {
 /* Mobile */
 @media only screen and (min-width: 320px) {
   @keyframes colorin {
-    0%{opacity:0;}
-    100%{opacity:1;}
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .wrapper {
-    opacity:0;
+    opacity: 0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
@@ -179,20 +187,20 @@ path {
     align-items: flex-end;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay:5s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
 
   .main {
     height: 100vh;
-    box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
     width: auto;
     margin: 0 auto;
   }
 
   .title-container {
     height: 100vh;
-    background: url("img/bg.jpg") left center no-repeat;
+    background: url('img/bg.jpg') left center no-repeat;
     background-size: cover;
     display: block;
     text-align: center;
@@ -215,7 +223,7 @@ path {
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.7;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
 
   .title-container__sub__subtitle {
@@ -225,7 +233,7 @@ path {
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.7;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
 
   .form-container {
@@ -235,8 +243,8 @@ path {
     padding-left: 20px;
   }
 
-  input[type="text"] {
-    display:block;
+  input[type='text'] {
+    display: block;
     background-color: transparent;
     border: 0;
     border-bottom: solid 1px #f16051;
@@ -250,11 +258,11 @@ path {
   }
 
   /* Removes outline around text box when active*/
-  input[type="text"] { 
+  input[type='text'] {
     outline: none;
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     border: 0;
     padding: 8px;
     margin: 0 2px;
@@ -279,7 +287,7 @@ path {
 
   .weather__key {
     color: #f16051;
-    border-bottom: solid 2px rgba(255,255,255,0.06);
+    border-bottom: solid 2px rgba(255, 255, 255, 0.06);
     padding: 10px 0 10px 0;
     font-weight: 500;
   }
@@ -290,7 +298,7 @@ path {
 
   .weather__value {
     color: #fff;
-    font-size:12px;
+    font-size: 12px;
     font-weight: 200;
   }
 
@@ -302,18 +310,21 @@ path {
     letter-spacing: 1px;
     font-weight: 200;
   }
-  
 }
 
 /* Tablet and up */
 @media only screen and (min-width: 768px) {
   /* opacity from 100% to none for background */
   @keyframes colorin {
-    0%{opacity:0;}
-    100%{opacity:1;}
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .wrapper {
-    opacity:0;
+    opacity: 0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
@@ -321,21 +332,25 @@ path {
     align-items: center;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay:5s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
   /* Slide down for main content of page */
   @keyframes slidedown {
-    0%{transform:translateY(-1000px);}
-    100%{transform:translateY(0px);}
+    0% {
+      transform: translateY(-1000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
   .main {
     /* main content is out of view*/
-    transform:translateY(-1000px);
+    transform: translateY(-1000px);
     -webkit-transform: translateY(-1000px);
     height: 90vh;
     background: #fff;
-    box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
     width: auto;
     margin: 0 auto;
     animation-name: slidedown;
@@ -345,10 +360,10 @@ path {
     /* main content stays in page after animation - animation-fill-mode */
     animation-fill-mode: forwards;
   }
-  
+
   .title-container {
     height: 90vh;
-    background: url("img/bg.jpg") center center no-repeat;
+    background: url('img/bg.jpg') center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -356,20 +371,20 @@ path {
     text-align: center;
     color: #000;
   }
-  
+
   .title-container__title {
     font-size: 50px;
     letter-spacing: 2px;
     line-height: 1.3;
     font-family: 'Roboto Slab', serif;
   }
-  
+
   .title-container__subtitle {
     font-style: italic;
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.5;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
 
   .title-container__sub__subtitle {
@@ -379,17 +394,17 @@ path {
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.7;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
-  
+
   .form-container {
     background-color: #2c3e50;
     height: 90vh;
     padding-top: 20px;
     padding-left: 50px;
   }
-  
-  input[type="text"] {
+
+  input[type='text'] {
     background-color: transparent;
     border: 0;
     border-bottom: solid 1px #f16051;
@@ -402,17 +417,18 @@ path {
     margin-right: 20px;
     font-size: 20px;
   }
-  
-  input[type="text"] { 
-      outline: none;
+
+  input[type='text'] {
+    outline: none;
   }
-  
+
   input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
-      -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
+    box-shadow: 0 0 0 30px #2c3e50 inset;
+    -webkit-text-fill-color: #fff !important;
   }
-  
-  input[type=submit] {
+
+  input[type='submit'] {
     border: 0;
     padding: 8px 20px;
     margin: 0 2px;
@@ -425,35 +441,35 @@ path {
     color: #fff;
     font-weight: 100;
   }
-  
+
   input:focus {
     outline: none;
   }
-  
+
   .weather__info {
     width: 300px;
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 2px;
   }
-  
+
   .weather__key {
     color: #f16051;
-    border-bottom: solid 2px rgba(255,255,255,0.06);
+    border-bottom: solid 2px rgba(255, 255, 255, 0.06);
     padding: 20px 0 20px 0;
     font-weight: 400;
   }
-  
+
   .weather__key:last-child {
     border: 0;
   }
-  
+
   .weather__value {
     color: #fff;
     font-size: 17px;
     font-weight: 200;
   }
-  
+
   .weather__error {
     color: #f16051;
     font-size: 20px;
@@ -463,15 +479,18 @@ path {
 }
 /* 4k */
 @media only screen and (min-width: 2560px) {
-
   /* opacity from 100% to none for background */
   @keyframes colorin {
-    0%{opacity:0;}
-    100%{opacity:1;}
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .wrapper {
-    opacity:0;
+    opacity: 0;
     background: linear-gradient(to right, #2298e6, #e74c3c);
     height: 100vh;
     display: flex;
@@ -479,23 +498,27 @@ path {
     align-items: center;
     animation-name: colorin;
     animation-duration: 1s;
-    animation-delay:5s;
+    animation-delay: 5s;
     animation-fill-mode: forwards;
   }
-  
+
   /* Slide down for main content of page */
   @keyframes slidedown {
-    0%{transform:translateY(-1000px);}
-    100%{transform:translateY(0px);}
+    0% {
+      transform: translateY(-1000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   .main {
     /* main content is out of view*/
-    transform:translateY(-1000px);
+    transform: translateY(-1000px);
     -webkit-transform: translateY(-1000px);
     height: 90vh;
     background: #fff;
-    box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
     width: auto;
     margin: 0 auto;
     animation-name: slidedown;
@@ -505,10 +528,10 @@ path {
     /* main content stays in page after animation - animation-fill-mode */
     animation-fill-mode: forwards;
   }
-  
+
   .title-container {
     height: 90vh;
-    background: url("img/bg.jpg") center center no-repeat;
+    background: url('img/bg.jpg') center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -516,20 +539,20 @@ path {
     text-align: center;
     color: #000;
   }
-  
+
   .title-container__title {
     font-size: 50px;
     letter-spacing: 2px;
     line-height: 1.3;
     font-family: 'Roboto Slab', serif;
   }
-  
+
   .title-container__subtitle {
     font-style: italic;
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.5;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
 
   .title-container__sub__subtitle {
@@ -539,17 +562,17 @@ path {
     font-weight: 100;
     letter-spacing: 1px;
     line-height: 1.7;
-    font-family: "Merriweather", serif;
+    font-family: 'Merriweather', serif;
   }
-  
+
   .form-container {
     background-color: #2c3e50;
     height: 90vh;
     padding-top: 20vh;
     padding-left: 50px;
   }
-  
-  input[type="text"] {
+
+  input[type='text'] {
     background-color: transparent;
     border: 0;
     border-bottom: solid 1px #f16051;
@@ -562,17 +585,18 @@ path {
     margin-right: 20px;
     font-size: 20px;
   }
-  
-  input[type="text"] { 
-      outline: none;
+
+  input[type='text'] {
+    outline: none;
   }
-  
+
   input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
-      -webkit-text-fill-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 30px #2c3e50 inset;
+    box-shadow: 0 0 0 30px #2c3e50 inset;
+    -webkit-text-fill-color: #fff !important;
   }
-  
-  input[type=submit] {
+
+  input[type='submit'] {
     border: 0;
     padding: 8px 20px;
     margin: 0 2px;
@@ -585,35 +609,35 @@ path {
     color: #fff;
     font-weight: 100;
   }
-  
+
   input:focus {
     outline: none;
   }
-  
+
   .weather__info {
     width: 300px;
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 2px;
   }
-  
+
   .weather__key {
     color: #f16051;
-    border-bottom: solid 2px rgba(255,255,255,0.06);
+    border-bottom: solid 2px rgba(255, 255, 255, 0.06);
     padding: 20px 0 20px 0;
     font-weight: 400;
   }
-  
+
   .weather__key:last-child {
     border: 0;
   }
-  
+
   .weather__value {
     color: #fff;
     font-size: 17px;
     font-weight: 200;
   }
-  
+
   .weather__error {
     color: #f16051;
     font-size: 20px;
