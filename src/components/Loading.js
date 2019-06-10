@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Loading = () => {
   return (
-    <div id='load'>
+    <Fragment>
       <div className='preloader' styles={{ opacity: '1' }}>
         <svg
           version='1.1'
@@ -106,7 +106,7 @@ const Loading = () => {
           <span className='drop' />
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

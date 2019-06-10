@@ -148,24 +148,6 @@ path {
     opacity: 0;
   }
 }
-/* Loading screen only appears for 5s */
-@keyframes load {
-  0% {
-    opacity: 1;
-  }
-  66% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-#load {
-  animation-name: load;
-  animation-duration: 5s;
-  animation-fill-mode: forwards;
-}
 
 /* Mobile */
 @media only screen and (min-width: 320px) {
