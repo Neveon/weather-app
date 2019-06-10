@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 const Loading = () => {
   return (
     <Fragment>
+      <h3 id='load-title'>Loading...</h3>
       <div className='preloader' styles={{ opacity: '1' }}>
         <svg
           version='1.1'
